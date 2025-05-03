@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>亲爱的刘映榆，生日快乐！</title>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .candle {
+            width: 20px;
+            height: 80px;
+            background-color: #f56565;
+            border-radius: 10px;
+            position: relative;
+            margin: 0 10px;
+        }
+
+        .flame {
+            width: 15px;
+            height: 25px;
+            background-color: #f6e05e;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            top: -25px;
+            left: 2.5px;
+            animation: flicker 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% {
+                transform: rotate(-10deg);
+            }
+            100% {
+                transform: rotate(10deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-pink-100 to-purple-100 min-h-screen flex flex-col justify-center items-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-3xl animate-fadeIn">
+        <h1 class="text-4xl font-bold text-center text-pink-600 mb-4 animate-slideIn">亲爱的刘映榆，21岁生日快乐🎉</h1>
+        <p class="text-lg text-gray-700 text-center mb-8 animate-slideIn">在这个特别的日子里，我想告诉你，你是我生命中最美好的遇见。愿你的每一岁都能奔走在自己的热爱里，平安喜乐，得偿所愿🥰。</p>
+        <div class="flex justify-center mb-8 animate-slideIn">
+            <!-- 你可以将此处替换为你和女朋友的合照 -->
+            <img src="./1.jpg" alt="美丽的你" class="rounded-full">
+        </div>
+        <p class="text-lg text-gray-700 text-center mb-4 animate-slideIn">过去的118天，我们一起经历了许多美好的瞬间，这些回忆如同璀璨的星星，照亮了我们的爱情之路✨。</p>
+        <p class="text-lg text-gray-700 text-center mb-8 animate-slideIn">未来的日子，我会一直陪伴在你身边，与你一起度过每一个春夏秋冬，共同创造更多美好的回忆💕。</p>
+        <div class="flex justify-center animate-slideIn">
+            <!-- 蜡烛 -->
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+            <!-- 你可以将此处替换为蛋糕图片 -->
+            <img src="./2.jpg" alt="我们" class="mx-4">
+        </div>
+        <div class="flex justify-center mt-8 animate-slideIn">
+            <i class="fa-solid fa-heart text-pink-600 text-5xl"></i>
+        </div>
+    </div>
+    <!-- 背景音乐 -->
+    <audio id="birthdayMusic" loop>
+        <!-- 你可以将此处替换为实际的音乐文件地址 -->
+        <source src="" type="audio/mpeg">
+        你的浏览器不支持音频播放。
+    </audio>
+    <button id="musicControl" class="fixed bottom-4 right-4 bg-pink-600 text-white p-2 rounded-full" onclick="toggleMusic()">
+        <i class="fa-solid fa-play"></i>
+    </button>
+    <script>
+        const audio = document.getElementById('birthdayMusic');
+        const controlButton = document.getElementById('musicControl');
+
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                controlButton.innerHTML = '<i class="fa-solid fa-pause"></i>';
+            } else {
+                audio.pause();
+                controlButton.innerHTML = '<i class="fa-solid fa-play"></i>';
+            }
+        }
+    </script>
+</body>
+
+</html>
+    
